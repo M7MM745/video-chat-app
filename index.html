@@ -1,0 +1,33 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/simple-peer/9.11.1/simplepeer.min.js"></script>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>تطبيق Face to Face</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="main-content">
+            <div class="user-profile">
+                <div class="coin-balance">
+                    <span id="coinCount">100</span>
+                    <img src="coin-icon.png" alt="coin">
+                    <button onclick="buyCoins()">+</button>
+                </div>
+            </div>
+            <h1>FACE TO FACE</h1>
+            <p>اضغط على الزر للبدء</p>
+            
+            <div class="video-grid">
+                <video id="localVideo" autoplay playsinline muted></video>
+                <video id="remoteVideo" autoplay playsinline></video>
+            </div>
+
+            <button id="startBtn">ابدأ مكالمة فيديو</button>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
