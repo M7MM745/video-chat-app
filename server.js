@@ -3,6 +3,9 @@ const app = express();
 const http = require('http').createServer(app);
 const io = require('socket.io')(http);
 
+// هذا السطر ضروري ليعرف Render أي منفذ يستخدم
+const PORT = process.env.PORT || 3000;
+
 app.use(express.static(__dirname)); // لتقديم ملفات HTML/JS
 
 // تخزين بيانات المستخدمين (يمكن استبداله بقاعدة بيانات مثل MongoDB لاحقاً)
@@ -85,4 +88,6 @@ io.on('connection', (socket) => {
     });
 });
 
-http.listen(3000, () => console.log('السيرفر يعمل على http://localhost:3000'));
+http.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
